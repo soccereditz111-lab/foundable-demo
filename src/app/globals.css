@@ -1,0 +1,122 @@
+@import "tailwindcss";
+
+:root {
+  --background: #000000;
+  --foreground: #ffffff;
+  --highlight: #7a1f2b;
+  --highlight-text: #ffffff;
+  --accent-red: #e11d48;
+  --muted: #a1a1aa;
+  --card-bg: #0a0a0a;
+  --border-glow: rgba(122, 31, 43, 0.45);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-plus-jakarta);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #000000;
+  color: #ffffff;
+  font-family: var(--font-plus-jakarta), "Plus Jakarta Sans", system-ui, sans-serif;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.bg-vignette {
+  background:
+    radial-gradient(ellipse 80% 50% at 50% -10%, rgba(80, 20, 30, 0.35) 0%, transparent 55%),
+    radial-gradient(ellipse 60% 40% at 80% 100%, rgba(40, 10, 20, 0.25) 0%, transparent 50%),
+    #000000;
+}
+
+.highlight-pill {
+  display: inline-block;
+  background: linear-gradient(180deg, #8b2430 0%, #5c1520 100%);
+  color: #fff;
+  padding: 0.08em 0.28em;
+  border-radius: 0.2em;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.06) inset;
+  font-weight: 700;
+  line-height: 1.15;
+}
+
+.video-frame {
+  border: 1px solid rgba(122, 31, 43, 0.55);
+  box-shadow:
+    0 0 0 1px rgba(0, 0, 0, 0.8),
+    0 0 40px rgba(122, 31, 43, 0.25),
+    0 25px 80px rgba(0, 0, 0, 0.65);
+  border-radius: 12px;
+  overflow: hidden;
+  background: #0d0d0d;
+}
+
+.grid-overlay {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+.cta-pill {
+  border: 1px solid rgba(122, 31, 43, 0.6);
+  background: rgba(10, 10, 10, 0.85);
+  border-radius: 9999px;
+  backdrop-filter: blur(8px);
+}
+
+.form-card {
+  background: #ffffff;
+  color: #1a1a1a;
+  border-radius: 12px;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.45);
+}
+
+.apply-btn {
+  letter-spacing: 0.04em;
+  font-weight: 700;
+  text-transform: uppercase;
+  transition: opacity 0.2s ease;
+}
+
+.apply-btn:hover {
+  opacity: 0.85;
+}
+
+.option-btn {
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+.option-btn:hover {
+  background: #f0f0f0;
+}
+
+.option-btn.selected {
+  background: #e8e8e8;
+  border-color: #7a1f2b;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.55s ease forwards;
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease forwards;
+}
